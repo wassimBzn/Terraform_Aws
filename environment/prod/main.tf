@@ -116,7 +116,7 @@ resource "aws_security_group" "axa_wassim_private_sg" {
     from_port   = 0
     to_port     = 65535
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.axa_wassim_vpc.cidr_block]
+    cidr_blocks = [aws_security_group.axa_wassim_public_sg.id]
   }
 
   egress {
